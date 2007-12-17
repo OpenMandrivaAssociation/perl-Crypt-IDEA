@@ -12,7 +12,6 @@ Group:          Development/Perl
 Source:		ftp://ftp.perl.org/pub/CPAN/modules/by-module/Crypt/%{module}-%{version}.tar.bz2
 Url:            http://search.cpan.org/dist/%{module}/
 BuildRequires:  perl-devel
-BuildRoot:      %{_tmppath}/%{name}-%{version}
 
 %description 
 This perl extension is an implementation of the IDEA block
