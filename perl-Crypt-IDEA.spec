@@ -1,18 +1,18 @@
-%define module	Crypt-IDEA
-%define name	perl-%{module}
-%define version 1.08
-%define release %mkrel 5
+%define upstream_name	 Crypt-IDEA
+%define upstream_version 1.08
 
-Name:		%{name}
-Version:	%{version}
-Release:	%{release}
-Summary:        Perl interface to IDEA block cipher
-License:	GPL or Artistic
-Group:          Development/Perl
-Source:		ftp://ftp.perl.org/pub/CPAN/modules/by-module/Crypt/%{module}-%{version}.tar.bz2
-Url:            http://search.cpan.org/dist/%{module}/
+Name:       perl-%{upstream_name}
+Version:    %perl_convert_version %{upstream_version}
+Release:    %mkrel 1
+
+Summary:    Perl interface to IDEA block cipher
+License:	GPL+ or Artistic
+Group:      Development/Perl
+Url:        http://search.cpan.org/dist/%{upstream_name}/
+Source0:	ftp://ftp.perl.org/pub/CPAN/modules/by-module/Crypt/%{upstream_name}-%{upstream_version}.tar.bz2
+
 BuildRequires:  perl-devel
-BuildRoot:      %{_tmppath}/%{name}-%{version}
+BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}
 
 %description 
 This perl extension is an implementation of the IDEA block
@@ -23,7 +23,7 @@ methods
 blocksize =item keysize =item encrypt =item decrypt
 
 %prep
-%setup -q -n %{module}-%{version}
+%setup -q -n %{upstream_name}-%{upstream_version}
 
 %build
 %{__perl} Makefile.PL INSTALLDIRS=vendor
@@ -45,4 +45,3 @@ rm -rf %{buildroot}
 %{perl_vendorarch}/Crypt
 %{perl_vendorarch}/auto/Crypt
 %{_mandir}/*/*
-
