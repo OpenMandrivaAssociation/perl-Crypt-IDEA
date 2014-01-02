@@ -1,14 +1,14 @@
 %define modname	Crypt-IDEA
-%define modver	1.08
+%define modver 1.10
 
 Summary:	Perl interface to IDEA block cipher
 Name:		perl-%{modname}
 Version:	%perl_convert_version %{modver}
-Release:	11
+Release:	1
 License:	GPLv2+ or Artistic
 Group:		Development/Perl
 Url:		http://search.cpan.org/dist/%{modname}/
-Source0:	ftp://ftp.perl.org/pub/CPAN/modules/by-module/Crypt/%{modname}-%{modver}.tar.bz2
+Source0:	ftp://ftp.perl.org:21/pub/CPAN/modules/by-module/Crypt/Crypt-IDEA-%{modver}.tar.gz
 BuildRequires:	perl-devel
 
 %description 
@@ -37,4 +37,5 @@ make test
 %{perl_vendorarch}/Crypt
 %{perl_vendorarch}/auto/Crypt
 %{_mandir}/man3/*
+
 
