@@ -1,4 +1,7 @@
-%define modname	Crypt-IDEA
+# Work around incomplete debug packages
+%global _empty_manifest_terminate_build 0
+
+%define modname Crypt-IDEA
 %define modver 1.10
 
 Summary:	Perl interface to IDEA block cipher
@@ -21,22 +24,20 @@ methods
 blocksize =item keysize =item encrypt =item decrypt
 
 %prep
-%setup -qn %{modname}-%{modver}
+%autosetup -n %{modname}-%{modver} -p1
 
 %build
-%__perl Makefile.PL INSTALLDIRS=vendor
-%make CFLAGS="%{optflags}"
+perl Makefile.PL INSTALLDIRS=vendor
+%make_build CFLAGS="%{optflags}"
 
 %check
 make test
 
 %install
-%makeinstall_std
+%make_install
 
 %files
 %doc COPYRIGHT
 %{perl_vendorarch}/Crypt
 %{perl_vendorarch}/auto/Crypt
-%{_mandir}/man3/*
-
-
+%doc %{_mandir}/man3/*
