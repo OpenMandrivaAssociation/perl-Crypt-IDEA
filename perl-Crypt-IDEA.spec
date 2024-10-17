@@ -10,7 +10,7 @@ Version:	%perl_convert_version %{modver}
 Release:	10
 License:	GPLv2+ or Artistic
 Group:		Development/Perl
-Url:		http://search.cpan.org/dist/%{modname}/
+Url:		https://search.cpan.org/dist/%{modname}/
 Source0:	ftp://ftp.perl.org:21/pub/CPAN/modules/by-module/Crypt/Crypt-IDEA-%{modver}.tar.gz
 BuildRequires:	perl(Test::More)
 BuildRequires:	perl-devel
