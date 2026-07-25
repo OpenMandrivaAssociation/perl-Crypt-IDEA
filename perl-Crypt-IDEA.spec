@@ -6,12 +6,12 @@
 
 Summary:	Perl interface to IDEA block cipher
 Name:		perl-%{modname}
-Version:	%perl_convert_version %{modver}
-Release:	12
+Version:	%{modver}
+Release:	13
 License:	GPLv2+ or Artistic
 Group:		Development/Perl
-Url:		https://search.cpan.org/dist/%{modname}/
-Source0:	ftp://ftp.perl.org:21/pub/CPAN/modules/by-module/Crypt/Crypt-IDEA-%{modver}.tar.gz
+Url:		https://metacpan.org/dist/Crypt-IDEA
+Source0:	https://cpan.metacpan.org/authors/id/D/DP/DPARIS/Crypt-IDEA-%{modver}.tar.gz
 BuildRequires:	make
 BuildRequires:	perl(Test::More)
 BuildRequires:	perl-devel
